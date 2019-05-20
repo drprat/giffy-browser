@@ -14,15 +14,15 @@ class HomeList extends React.Component {
   }
 
   render() {
-    const { upcoming, happy } = this.props;
+    const { upcoming, happy, keyword } = this.props;
     return (
       <div>
         <ListHeader header="Up Coming" />
         <GifList gifList={upcoming} />
         <ListHeader header="Happy" />
         <GifList gifList={happy} />
-        <ListHeader header="Up Coming" />
-        <GifList gifList={upcoming} />
+        <ListHeader header="Search results:" />
+        <GifList gifList={keyword} />
       </div>
     );
   }
@@ -31,12 +31,15 @@ HomeList.propTypes = {
   fetchUpcoming: Proptypes.func,
   upcoming: Proptypes.array,
   fetchHappy: Proptypes.func,
-  happy: Proptypes.array
+  happy: Proptypes.array,
+  fetchKeyword: Proptypes.func,
+  keyword: Proptypes.array
 };
 
 const stateToProps = state => ({
   upcoming: state.gifListsReducer.upcoming,
   happy: state.gifListsReducer.happy,
+  keyword: state.gifListsReducer.keyword,
 });
 
 const dispatchToProps = dispatch => ({
@@ -45,6 +48,9 @@ const dispatchToProps = dispatch => ({
   },
   fetchHappy: () => {
     dispatch(GifListAction.fetchHappy());
+  },
+  fetchKeyword: () => {
+    dispatch(GifListAction.fetchKeyword());
   }
 });
 

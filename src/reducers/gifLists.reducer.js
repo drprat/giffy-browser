@@ -2,7 +2,8 @@ import constants from "../actions/constants";
 
 const initialState = {  
   upcoming: [],
-  happy: []
+  happy: [],
+  keyword: []
 };
 
 export default (state = initialState, action) => {
@@ -16,6 +17,10 @@ export default (state = initialState, action) => {
 
     case constants.FETCH_HAPPY:
       newState.happy = action.payload;
+      return newState;
+
+    case constants.FETCH_KEYWORD:
+      newState.keyword = action.payload;
       return newState;
 
     default:
