@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import SearchInput from "./SearchInput";
-import netflixLogo from "@/assets/img/Netflix-logo.png";
 
 const Nav = () => (
   <div>
@@ -10,14 +9,7 @@ const Nav = () => (
       <ul>
         <li>
           <NavLink to="/" className="logo navItem">
-            <img
-              style={{
-                width: 110,
-                height: 30
-              }}
-              src={netflixLogo}
-              alt="img"
-            />
+            <h1 >Giffy-browser</h1>
           </NavLink>
         </li>
       </ul>

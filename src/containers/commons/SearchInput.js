@@ -32,7 +32,7 @@ class SearchInput extends React.Component {
           className="searchInput"
           type="text"
           value={this.state.input}
-          placeholder="movie title..."
+          placeholder="Search gif..."
           onChange={this.handleChange}
           onKeyDown={e => {
             if (e.keyCode === ENTER_KEY) this.handleSubmit();

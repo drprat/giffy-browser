@@ -1,68 +1,50 @@
 import React from "react";
 import Proptypes from "prop-types";
 import { connect } from "react-redux";
-import { GifList, ListHeader } from "./presentations";
+import ListHeader from "../components/ListHeader";
+import GifList from "../components/GifList";
+import {GifListAction} from "../actions"
 
 class HomeList extends React.Component {
   componentDidMount() {
-    const {
-      fetchNowPlaying,
-      fetchPopular,
-      fetchTopRated,
-      fetchUpcoming
+    const {fetchUpcoming, fetchHappy
     } = this.props;
-    fetchUpcoming();
-    fetchPopular();
-    fetchTopRated();
-    fetchNowPlaying();
+    fetchUpcoming(); 
+    fetchHappy(); 
   }
 
   render() {
-    const { nowPlaying, upcoming, topRated, popular } = this.props;
+    const { upcoming, happy } = this.props;
     return (
       <div>
         <ListHeader header="Up Coming" />
-        <MovieList movieList={upcoming} />
-        <ListHeader header="Popular" />
-        <MovieList movieList={popular} />
-        <ListHeader header="Top Rated" />
-        <MovieList movieList={topRated} />
-        <ListHeader header="Now Playing" />
-        <MovieList movieList={nowPlaying} />
+        <GifList gifList={upcoming} />
+        <ListHeader header="Happy" />
+        <GifList gifList={happy} />
+        <ListHeader header="Up Coming" />
+        <GifList gifList={upcoming} />
       </div>
     );
   }
 }
 HomeList.propTypes = {
   fetchUpcoming: Proptypes.func,
-  fetchPopular: Proptypes.func,
-  fetchTopRated: Proptypes.func,
-  fetchNowPlaying: Proptypes.func,
-  nowPlaying: Proptypes.array,
   upcoming: Proptypes.array,
-  topRated: Proptypes.array,
-  popular: Proptypes.array
+  fetchHappy: Proptypes.func,
+  happy: Proptypes.array
 };
 
 const stateToProps = state => ({
-  upcoming: state.hompageListsReducer.upcoming,
-  topRated: state.hompageListsReducer.topRated,
-  popular: state.hompageListsReducer.popular,
-  nowPlaying: state.hompageListsReducer.nowPlaying
+  upcoming: state.gifListsReducer.upcoming,
+  happy: state.gifListsReducer.happy,
 });
 
 const dispatchToProps = dispatch => ({
   fetchUpcoming: () => {
-    dispatch(movieListAction.fetchUpcoming());
+    dispatch(GifListAction.fetchUpcoming());
   },
-  fetchPopular: () => {
-    dispatch(movieListAction.fetchPopular());
-  },
-  fetchTopRated: () => {
-    dispatch(movieListAction.fetchTopRated());
-  },
-  fetchNowPlaying: () => {
-    dispatch(movieListAction.fetchNowPlaying());
+  fetchHappy: () => {
+    dispatch(GifListAction.fetchHappy());
   }
 });
 

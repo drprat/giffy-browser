@@ -9,7 +9,7 @@ class GifList extends React.Component {
     margin: 0
   };
 
-  renderGifList = gifList =>
+  renderGifList = (gifList) =>
     gifList.map(gif => <ListItem key={gif.id} gif={gif} />);
 
   handleLeftClick = e => {
@@ -47,7 +47,7 @@ class GifList extends React.Component {
   };
 
   render() {
-    const { gifList } = this.props;
+    const { gifList = []} = this.props;
     return (
       <div className="list-container">
         <span

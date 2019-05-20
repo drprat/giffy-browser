@@ -30,12 +30,12 @@ class ListItem extends React.Component {
   };
 
   renderPic = gif => {
-    if (gif.backdrop_path !== null) {
+    if (gif.images.downsized.url !== null) {
       return (
         <img
           className="tile-img"
-          alt="img"
-          src={`http://image.tmdb.org/t/p/w500//${movie.backdrop_path}`}
+          alt={gif.images}
+           src={gif.images.downsized.url}
         />
       );
     }
@@ -44,7 +44,6 @@ class ListItem extends React.Component {
         <img
           className="tile-img "
           alt="img"
-          src={`http://image.tmdb.org/t/p/w500//${movie.poster_path}`}
         />
       );
     }
@@ -60,15 +59,10 @@ class ListItem extends React.Component {
   render() {
     const { gif } = this.props;
     return (
-      <Link className="tile" to={`/movie/${movie.id}`}>
-        <div className="tile-img">{this.renderPic(movie)}</div>
+      <Link className="tile" to="#" >
+        <div className="tile-img">{this.renderPic(gif)}</div>
         <div className=" photo-overlay">
           <div className="tile-text-container">
-            <div className="playbtn-container">
-              <button className="playBtn ">▶</button>
-            </div>
-            <div>{this.renderTitle(movie.title)}</div>
-            <div>{this.renderDesc(movie.overview)}</div>
           </div>
         </div>
       </Link>
@@ -80,3 +74,4 @@ ListItem.propTypes = {
   gif: Proptypes.object
 };
 export default ListItem;
+
