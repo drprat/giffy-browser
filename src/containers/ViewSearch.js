@@ -22,12 +22,12 @@ class ViewSearch extends React.Component {
     componentDidUpdate() {
         const {
             match: {
-                params: { searchInput }
+                params: { keyword }
             }
         } = this.props;
         const { currentParam } = this.state;
 
-      //  if (currentParam !== searchInput) this.fetchSearch();
+        if (currentParam !== keyword) this.fetchSearch();
     }
 
     fetchSearch = () => {
@@ -43,7 +43,7 @@ class ViewSearch extends React.Component {
 
     componentWillUnmount() {
         const { clearSearchResult } = this.props;
-        //clearSearchResult();
+        clearSearchResult();
         this.setState({ currentParam: "" });
     }
 
@@ -73,7 +73,7 @@ const dispatchToProps = dispatch => ({
     fetchKeyword: (input) => {
       dispatch(GifListAction.fetchKeyword(input));
     },
-    //clearSearchResult: () => dispatch(GifListAction.clearSearchResult())
+   clearSearchResult: () => dispatch(GifListAction.clearSearchResult())
 });
 
 export default withRouter(

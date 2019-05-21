@@ -1,7 +1,7 @@
 import constants from "../actions/constants";
 
 const initialState = {  
-  upcoming: [],
+  excited: [],
   happy: [],
   keyword: []
 };
@@ -11,8 +11,8 @@ export default (state = initialState, action) => {
 
   switch (action.type) {
    
-    case constants.FETCH_UPCOMING:
-      newState.upcoming = action.payload;
+    case constants.FETCH_EXCITED:
+      newState.excited = action.payload;
       return newState;
 
     case constants.FETCH_HAPPY:
@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
     case constants.FETCH_KEYWORD:
       newState.keyword = action.payload;
       return newState;
-
+      
     default:
       return state;
   }

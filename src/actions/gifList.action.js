@@ -2,15 +2,15 @@ import GphApiClient from 'giphy-js-sdk-core';
 import constants from "../actions/constants";
 
 export default {
-  fetchUpcoming: () => async dispatch => {
+  fetchExcited: () => async dispatch => {
     try {
         var client = GphApiClient("F4D3Q1qXdtsGruEH30k6RRigE2IDhsvc")
-        client.search('gifs', {"q": "cats"})
+        client.search('gifs', {"q": "joy"})
         .then((response) => {
         
         console.log(response.data) 
         dispatch({
-          type: constants.FETCH_UPCOMING,
+          type: constants.FETCH_EXCITED,
           payload: response.data
         });
         })
@@ -46,9 +46,8 @@ export default {
   fetchKeyword: (keyword) => async dispatch => {
     try {
         var client = GphApiClient("F4D3Q1qXdtsGruEH30k6RRigE2IDhsvc")
-        client.search('gifs', {"q": "$keyword"})
-        .then((response) => {
-        
+        client.search('gifs', {"q": keyword})
+        .then((response) => {        
         console.log(response.data) 
         dispatch({
           type: constants.FETCH_KEYWORD,
@@ -62,5 +61,10 @@ export default {
         payload: "Error occured while fetching from Giphy API"
       });
     }
+  },
+  clearSearchResult: () => dispatch => {
+    dispatch({
+      type: constants.CLEAR_SEARCH_RESULT
+    });
   }
 };

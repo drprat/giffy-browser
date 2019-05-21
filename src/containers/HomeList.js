@@ -7,29 +7,30 @@ import {GifListAction} from "../actions"
 
 class HomeList extends React.Component {
   componentDidMount() {
-    const {fetchUpcoming, fetchHappy
+    const {fetchExcited, fetchHappy, fetchKeyword
     } = this.props;
-    fetchUpcoming(); 
+    fetchExcited(); 
     fetchHappy(); 
+    fetchKeyword("Confident");
   }
 
   render() {
-    const { upcoming, happy, keyword } = this.props;
+    const { excited, happy, keyword } = this.props;
     return (
       <div>
-        <ListHeader header="Up Coming" />
-        <GifList gifList={upcoming} />
+        <ListHeader header="Excited" />
+        <GifList gifList={excited} />
         <ListHeader header="Happy" />
         <GifList gifList={happy} />
-        <ListHeader header="Search results:" />
+        <ListHeader header="Confident" />
         <GifList gifList={keyword} />
       </div>
     );
   }
 }
 HomeList.propTypes = {
-  fetchUpcoming: Proptypes.func,
-  upcoming: Proptypes.array,
+  fetchExcited: Proptypes.func,
+  excited: Proptypes.array,
   fetchHappy: Proptypes.func,
   happy: Proptypes.array,
   fetchKeyword: Proptypes.func,
@@ -37,21 +38,21 @@ HomeList.propTypes = {
 };
 
 const stateToProps = state => ({
-  upcoming: state.gifListsReducer.upcoming,
+  excited: state.gifListsReducer.excited,
   happy: state.gifListsReducer.happy,
   keyword: state.gifListsReducer.keyword,
 });
 
 const dispatchToProps = dispatch => ({
-  fetchUpcoming: () => {
-    dispatch(GifListAction.fetchUpcoming());
+  fetchExcited: () => {
+    dispatch(GifListAction.fetchExcited());
   },
   fetchHappy: () => {
     dispatch(GifListAction.fetchHappy());
   },
-  fetchKeyword: () => {
-    dispatch(GifListAction.fetchKeyword());
-  }
+  fetchKeyword: (input) => {
+    dispatch(GifListAction.fetchKeyword(input));
+  },
 });
 
 export default connect(
