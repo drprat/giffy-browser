@@ -2,8 +2,8 @@
 @import "../src/containers/commons/Footer";
 @import "../src/containers/commons/Nav";
 @import "../src/containers/commons/Layout";
-// @import "./SearchPage/index";
-// @import "./MoviePage/index";
+@import "./containers/ViewSearch";
+@import "./containers/commons/SearchInput";
 
 /* Global */
 * {

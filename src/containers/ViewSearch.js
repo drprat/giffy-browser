@@ -3,7 +3,7 @@ import Proptypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import  ListItem  from "../components/ListItem";
+import  SearchListItem  from "./SearchListItem";
 import GifListAction from "../actions/gifList.action";
 
 class ViewSearch extends React.Component {
@@ -53,7 +53,7 @@ class ViewSearch extends React.Component {
             <div id="result-container">
                 <ul>
                     {keyword.map(gif => (
-                        <ListItem key={gif.id} gif={gif} />
+                        <SearchListItem key={gif.id} gif={gif} />
                     ))}
                 </ul>
             </div>

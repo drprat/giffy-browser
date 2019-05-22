@@ -8,8 +8,8 @@
   cursor: pointer;
   padding: 5px;
   overflow: hidden;
-  width: $tileWidth * 1.1;
-  height: $tileHeight * 1.1;
+  width: $tileWidth * 0.7;
+  height: $tileHeight * 0.7;
   transition: 0.3s transform;
   transform-origin: 50% 50%;
   &:hover {
@@ -17,8 +17,8 @@
   }
   .tile-img {
     object-fit: cover;
-    width: $tileWidth * 1.1;
-    height: $tileHeight * 1.1;
+    width: $tileWidth * 0.7;
+    height: $tileHeight * 0.7;
   }
 }
 .search-tile-desc {

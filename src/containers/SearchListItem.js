@@ -2,7 +2,7 @@ import React from "react";
 import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
 
-class ListItem extends React.Component {
+class SearchListItem extends React.Component {
   constructor(props) {
     super(props);
     this.renderPic = this.renderPic.bind(this);
@@ -38,7 +38,7 @@ class ListItem extends React.Component {
   render() {
     const { gif } = this.props;
     return (
-      <Link className="tile" to="#" >
+      <Link className="search-tile" to="#" >
         <div className="tile-img">{this.renderPic(gif)}</div>
         <div className=" photo-overlay">
           <div className="tile-text-container">
@@ -49,8 +49,8 @@ class ListItem extends React.Component {
   }
 }
 
-ListItem.propTypes = {
+SearchListItem.propTypes = {
   gif: Proptypes.object
 };
-export default ListItem;
+export default SearchListItem;
 
