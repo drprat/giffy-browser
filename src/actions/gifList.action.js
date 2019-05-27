@@ -5,7 +5,7 @@ export default {
   fetchExcited: () => async dispatch => {
     try {
         var client = GphApiClient("F4D3Q1qXdtsGruEH30k6RRigE2IDhsvc")
-        client.search('gifs', {"q": "joy"})
+        client.search('gifs', {"q": "excited"})
         .then((response) => {
         
         console.log(response.data) 

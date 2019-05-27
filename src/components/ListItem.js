@@ -18,21 +18,6 @@ class ListItem extends React.Component {
         />
       );
     }
-    if (gif.poster_path !== null) {
-      return (
-        <img
-          className="tile-img "
-          alt="img"
-        />
-      );
-    }
-    return (
-      <img
-        alt="img"
-        className="tile-img"
-        src="http://via.placeholder.com/280x160"
-      />
-    );
   };
 
   render() {

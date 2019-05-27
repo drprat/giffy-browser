@@ -14,36 +14,44 @@ class GifList extends React.Component {
 
   handleLeftClick = e => {
     e.preventDefault();
-    if (this.state.margin < 350) {
+    // if (this.state.margin < 50) { // use this for single sided rotation
       this.setState({
-        margin: this.state.margin + 350
+        margin: this.state.margin + 50
       });
+      var pop = this.props.gifList.pop();
+      this.props.gifList.unshift(pop);
       // eslint-disable-next-line
       const el = findDOMNode(this.refs.content);
       $(el).animate(
         {
-          marginLeft: "+=350px"
+          marginLeft: "=10px"
         },
         "fast"
       );
-    }
+    // }
   };
 
   handleRightClick = e => {
     e.preventDefault();
-    if (this.state.margin > -4200) {
+    // if (this.state.margin > -4200) {
       this.setState({
-        margin: this.state.margin - 350
+        margin: this.state.margin - 50
       });
+      console.log("this.state.margin" + this.state.margin);
+      console.log(this.props.gifList);
+      var push = this.props.gifList.shift();
+      console.log("shifted:" + push.id);
+      this.props.gifList.push(push);
+      console.log(this.props.gifList);
       // eslint-disable-next-line
       const el = findDOMNode(this.refs.content);
       $(el).animate(
         {
-          marginLeft: "-=350px"
+          marginLeft: "=10px"
         },
         "fast"
       );
-    }
+    // }
   };
 
   render() {
