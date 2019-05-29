@@ -1,72 +1,46 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
+import Proptypes from "prop-types";
+import InfiniteCarousel from 'react-leaf-carousel';
+import ListItem from "./ListItem";
 
 export default class CarouselList extends Component {
-  render() {
-    var settings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      initialSlide: 0,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    };
-    return (
-      <div>
-        <h2> Responsive </h2>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-          <div>
-            <h3>7</h3>
-          </div>
-          <div>
-            <h3>8</h3>
-          </div>
-        </Slider>
-      </div>
-    );
-  }
+
+    renderGifList = (gifList) =>
+        gifList.map(gif => <ListItem key={gif.id} gif={gif} />);
+
+    render() {
+        const { gifList = [] } = this.props;
+        return (
+            <InfiniteCarousel
+                breakpoints={[
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        },
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        },
+                    },
+                ]}
+                dots={true}
+                showSides={true}
+                sidesOpacity={.5}
+                sideSize={.1}
+                slidesToScroll={4}
+                slidesToShow={4}
+                scrollOnDevice={true}
+            >
+                <div>{this.renderGifList(gifList)}{gifList}</div>
+             </InfiniteCarousel>
+        );
+    }
 }
+CarouselList.propTypes = {
+    gifList: Proptypes.array
+  };

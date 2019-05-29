@@ -26,7 +26,7 @@ class HomeList extends React.Component {
         <ListHeader header="Confident" />
         <GifList gifList={keyword} />
         <ListHeader header="Carousel" />
-        <CarouselList />
+        <CarouselList gifList={excited}/>
       </div>
     );
   }
