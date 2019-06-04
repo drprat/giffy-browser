@@ -3,7 +3,7 @@ import Proptypes from "prop-types";
 import { connect } from "react-redux";
 import ListHeader from "../components/ListHeader";
 import GifList from "../components/GifList";
-import CarouselList from "../components/CarouselList"
+import CarouselList, {InfCarousel} from "../components/CarouselList"
 import {GifListAction} from "../actions"
 
 class HomeList extends React.Component {
@@ -26,7 +26,9 @@ class HomeList extends React.Component {
         <ListHeader header="Confident" />
         <GifList gifList={keyword} />
         <ListHeader header="Carousel" />
-        <CarouselList gifList={excited}/>
+        <CarouselList gifList={excited}/>        
+        <ListHeader header="Carousel2" />
+        <InfCarousel gifList={excited}/>
       </div>
     );
   }

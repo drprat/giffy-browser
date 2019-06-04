@@ -13,7 +13,7 @@ class ListItem extends React.Component {
       return (
         <img
           className="tile-img"
-          alt={gif.images}
+          alt={gif.images} data-src="" 
            src={gif.images.downsized.url}
         />
       );

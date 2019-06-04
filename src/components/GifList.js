@@ -63,7 +63,7 @@ class GifList extends React.Component {
         <div className="module-section clearfix">
           {/* eslint-disable-next-line react/no-string-refs */}
           <ul id="content" ref="content">
-            <div className="listRow">{this.renderGifList(gifList)}</div>
+            <div className="listRow">{this.renderGifList(gifList)}{console.log("this is the value" + gifList)}</div>
           </ul>
         </div>
 

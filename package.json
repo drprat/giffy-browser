@@ -7,6 +7,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "antd": "^3.19.1",
+    "font-awesome": "^4.7.0",
     "giphy-js-sdk-core": "^1.0.6",
     "jquery": "^3.4.1",
     "node-sass": "^4.12.0",

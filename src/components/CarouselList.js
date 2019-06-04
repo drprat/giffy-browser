@@ -1,46 +1,101 @@
 import React, { Component } from "react";
-import Proptypes from "prop-types";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "font-awesome/css/font-awesome.min.css"
+
+import Slider from "react-slick";
 import InfiniteCarousel from 'react-leaf-carousel';
+import Proptypes from "prop-types";
 import ListItem from "./ListItem";
 
-export default class CarouselList extends Component {
-
-    renderGifList = (gifList) =>
-        gifList.map(gif => <ListItem key={gif.id} gif={gif} />);
-
-    render() {
-        const { gifList = [] } = this.props;
-        return (
-            <InfiniteCarousel
-                breakpoints={[
-                    {
-                        breakpoint: 500,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                        },
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
-                        },
-                    },
-                ]}
-                dots={true}
-                showSides={true}
-                sidesOpacity={.5}
-                sideSize={.1}
-                slidesToScroll={4}
-                slidesToShow={4}
-                scrollOnDevice={true}
-            >
-                <div>{this.renderGifList(gifList)}{gifList}</div>
-             </InfiniteCarousel>
-        );
-    }
+function LeftNavButton(props) {
+  const {className, style, onClick} = props
+  return (
+      <div
+          className="slick-arrow"
+          style={{...style, display: 'block'}}
+          onClick={onClick}
+      >
+        <i class="fas fa-chevron-right"></i>
+      </div>
+  );
 }
+
+function RightNavButton(props) {
+  const {className, style, onClick} = props
+  return (
+      <div
+          className="slick-arrow"
+          style={{...style, display: 'block'}}
+          onClick={onClick}
+      >
+          <img  alt="arrow_right"/>
+      </div>
+  );
+}
+
+
+const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    lazyLoad: true,
+    infinite: true,
+    slidesToScroll: 3,    
+    nextArrow: <RightNavButton />,
+    prevArrow: <LeftNavButton />,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        }
+      }
+    ]
+  };
+
+  const CarouselList = ({gifList}) => ( 
+    <Slider {...settings}>
+        {gifList.map(gif => <ListItem key={gif.id} gif={gif} />)}
+    </Slider>
+);
+export const InfCarousel = ({gifList}) => (
+<InfiniteCarousel
+    breakpoints={[
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+    ]}
+    dots={true}
+    showSides={true}
+    sidesOpacity={.5}
+    sideSize={.1}
+    slidesToScroll={4}
+    slidesToShow={4}
+    scrollOnDevice={true}
+  ><div>1</div>
+      {gifList.map(gif => <ListItem key={gif.id} gif={gif} />)}
+  </InfiniteCarousel>
+);
+
 CarouselList.propTypes = {
     gifList: Proptypes.array
   };
+
+  export default CarouselList;
