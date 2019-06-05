@@ -16,7 +16,7 @@ function LeftNavButton(props) {
           style={{...style, display: 'block'}}
           onClick={onClick}
       >
-        <i class="fas fa-chevron-right"></i>
+        <i class="fa fa-chevron-left"></i>
       </div>
   );
 }
@@ -29,11 +29,10 @@ function RightNavButton(props) {
           style={{...style, display: 'block'}}
           onClick={onClick}
       >
-          <img  alt="arrow_right"/>
+          <i class="fa fa-chevron-right" alt="arrow_right"/>
       </div>
   );
 }
-
 
 const settings = {
     dots: true,
@@ -43,8 +42,9 @@ const settings = {
     lazyLoad: true,
     infinite: true,
     slidesToScroll: 3,    
-    nextArrow: <RightNavButton />,
-    prevArrow: <LeftNavButton />,
+    //nextArrow: <div className="slick-next"><i class="fa fa-chevron-right" alt="arrow_right"/></div>,
+    //prevArrow: <div class="slick-prev"><span class="fa fa-angle-left"></span><span class="sr-only">Prev</span></div>,
+
     initialSlide: 0,
     responsive: [
       {
