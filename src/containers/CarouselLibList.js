@@ -6,7 +6,7 @@ import GifList from "../components/GifList";
 import CarouselList, {InfCarousel} from "../components/CarouselList"
 import {GifListAction} from "../actions"
 
-class HomeList extends React.Component {
+class CarouselLibList extends React.Component {
   componentDidMount() {
     const {fetchExcited, fetchHappy, fetchKeyword
     } = this.props;
@@ -19,17 +19,13 @@ class HomeList extends React.Component {
     const { excited, happy, keyword } = this.props;
     return (
       <div>
-        <ListHeader header="Excited" />
-        <GifList gifList={excited} />
-        <ListHeader header="Happy" />
-        <GifList gifList={happy} />
-        <ListHeader header="Confident" />
-        <GifList gifList={keyword} />        
+        <ListHeader header="Carousel" />
+        <CarouselList gifList={excited}/>                
       </div>
     );
   }
 }
-HomeList.propTypes = {
+CarouselLibList.propTypes = {
   fetchExcited: Proptypes.func,
   excited: Proptypes.array,
   fetchHappy: Proptypes.func,
@@ -59,4 +55,4 @@ const dispatchToProps = dispatch => ({
 export default connect(
   stateToProps,
   dispatchToProps
-)(HomeList);
+)(CarouselLibList);

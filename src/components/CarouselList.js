@@ -35,13 +35,11 @@ function RightNavButton(props) {
 }
 
 const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
+    speed: 300,
     slidesToShow: 4,
     lazyLoad: true,
     infinite: true,
-    slidesToScroll: 3,    
+    slidesToScroll: 2,    
     //nextArrow: <div className="slick-next"><i class="fa fa-chevron-right" alt="arrow_right"/></div>,
     //prevArrow: <div class="slick-prev"><span class="fa fa-angle-left"></span><span class="sr-only">Prev</span></div>,
 
@@ -50,10 +48,9 @@ const settings = {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true
         }
       }
     ]

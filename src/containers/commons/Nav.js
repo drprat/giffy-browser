@@ -13,7 +13,15 @@ const Nav = () => (
           </NavLink>
         </li>
       </ul>
+      <ul>
 
+        <li>
+          <NavLink to="/CarouselLib" >
+            <h1 >Lib Implementation</h1>
+          </NavLink>
+        </li>
+
+      </ul>
       <ul>
         <SearchInput />
       </ul>
