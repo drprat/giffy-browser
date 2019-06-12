@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import HomeList from "./containers/HomeList"
-import CarouselLibList from "./containers/CarouselLibList"
+import CarouselLibList from "./containers/carousel/CarouselLibList"
 import NotFound from "./containers/NotFound"
 import ViewSearch from "./containers/ViewSearch";
 

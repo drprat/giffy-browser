@@ -1,10 +1,10 @@
 import React from "react";
 import Proptypes from "prop-types";
 import { connect } from "react-redux";
-import ListHeader from "../components/ListHeader";
-import GifList from "../components/GifList";
-import CarouselList, {InfCarousel} from "../components/CarouselList"
-import {GifListAction} from "../actions"
+import ListHeader from "../../components/ListHeader";
+import GifList from "../../components/GifList";
+import CarouselList, {InfCarousel} from "./CarouselList"
+import {GifListAction} from "../../actions"
 
 class CarouselLibList extends React.Component {
   componentDidMount() {
