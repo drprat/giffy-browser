@@ -9,7 +9,7 @@ const BaseRouter = () => (
     <div>
       <Switch>
       <Route exact path="/" component={HomeList} />
-      <Route exact path="/CarouselLib" component={CarouselLibList} />
+      {/* <Route exact path="/CarouselLib" component={CarouselLibList} /> */}
       <Route path="/search/:keyword" exact component={ViewSearch} />
 
           

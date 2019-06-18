@@ -13,7 +13,7 @@ const Nav = () => (
           </NavLink>
         </li>
       </ul>
-      <ul>
+      {/* <ul>
 
         <li>
           <NavLink to="/CarouselLib" >
@@ -21,7 +21,7 @@ const Nav = () => (
           </NavLink>
         </li>
 
-      </ul>
+      </ul> */}
       <ul>
         <SearchInput />
       </ul>
