@@ -20,7 +20,7 @@ class SearchInput extends React.Component {
     if (input.length === 0) {
       return;
     }
-    history.push(`/search/${input}`);
+    history.push(`/giffy-browser/search/${input}`);
     this.setState({ input: "" });
   };
 
