@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.4c11168c.chunk.css",
-    "main.js": "/static/js/main.50a7d524.chunk.js",
-    "main.js.map": "/static/js/main.50a7d524.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.13e0e244.chunk.css": "/static/css/2.13e0e244.chunk.css",
-    "static/js/2.5897d081.chunk.js": "/static/js/2.5897d081.chunk.js",
-    "static/js/2.5897d081.chunk.js.map": "/static/js/2.5897d081.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.fcc688c838bbe33b66bd2886f663cb09.js": "/precache-manifest.fcc688c838bbe33b66bd2886f663cb09.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.13e0e244.chunk.css.map": "/static/css/2.13e0e244.chunk.css.map",
-    "static/css/main.4c11168c.chunk.css.map": "/static/css/main.4c11168c.chunk.css.map",
-    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
-    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg"
+    "main.css": "/giffy-browser/static/css/main.4c11168c.chunk.css",
+    "main.js": "/giffy-browser/static/js/main.59f64a09.chunk.js",
+    "main.js.map": "/giffy-browser/static/js/main.59f64a09.chunk.js.map",
+    "runtime~main.js": "/giffy-browser/static/js/runtime~main.5f6580f6.js",
+    "runtime~main.js.map": "/giffy-browser/static/js/runtime~main.5f6580f6.js.map",
+    "static/css/2.2e35ce9d.chunk.css": "/giffy-browser/static/css/2.2e35ce9d.chunk.css",
+    "static/js/2.5897d081.chunk.js": "/giffy-browser/static/js/2.5897d081.chunk.js",
+    "static/js/2.5897d081.chunk.js.map": "/giffy-browser/static/js/2.5897d081.chunk.js.map",
+    "index.html": "/giffy-browser/index.html",
+    "precache-manifest.50c6fa55104074d37fc53493e142cad7.js": "/giffy-browser/precache-manifest.50c6fa55104074d37fc53493e142cad7.js",
+    "service-worker.js": "/giffy-browser/service-worker.js",
+    "static/css/2.2e35ce9d.chunk.css.map": "/giffy-browser/static/css/2.2e35ce9d.chunk.css.map",
+    "static/css/main.4c11168c.chunk.css.map": "/giffy-browser/static/css/main.4c11168c.chunk.css.map",
+    "static/media/font-awesome.min.css": "/giffy-browser/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/slick-theme.css": "/giffy-browser/static/media/slick.f97e3bbf.svg"
   }
 }
