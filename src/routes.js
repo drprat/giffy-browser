@@ -8,9 +8,9 @@ import ViewSearch from "./containers/ViewSearch";
 const BaseRouter = () => (
     <div>
       <Switch>
-      <Route exact path="/" component={HomeList} />
+      <Route exact path="/giffy-browser/" component={HomeList} />
       {/* <Route exact path="/CarouselLib" component={CarouselLibList} /> */}
-      <Route path="/search/:keyword" exact component={ViewSearch} />
+      <Route path="/giffy-browser/search/:keyword" exact component={ViewSearch} />
 
           
       <Route component={NotFound} />{" "}
