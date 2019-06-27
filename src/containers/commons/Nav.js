@@ -8,7 +8,7 @@ const Nav = () => (
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to="/" className="logo navItem">
+          <NavLink to="/giffy-browser/" className="logo navItem">
             <h1 >Giffy-browser</h1>
           </NavLink>
         </li>
